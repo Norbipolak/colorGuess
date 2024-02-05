@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin: 10px auto;
+}
+
+button,
+input, 
+select {
+    display: block;
+    margin: 15px auto;
+    padding: 8px;
+}
+
+.container {
+    max-width: 500px;
+    /*benne lesz 3 darab 150px-es box de még lesz közötte egy kis gap szóval 500px és ha majd 6 box lesz az majd két sorba megy*/
+    margin: 15px auto;
+    padding: 15px;
+}
+
+.color-boxes {
+    /*color-boxes-nak már nem állítunk be szélességet (container-ben már megadtuk) csak, annyit mondunk, hogy display:grid*/
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 15px;
+}
+
+.color-box {
+    padding-bottom: 100%;
+    /*
+    mert ettől ugyanolyan magas lesz mint széles
+    a color-boxes grid-template-columns-vel megoldjuk a szélességet az itteni padding-bottom: 100%-val pedig a magasságot
+    */
+    /*
+    This style is often used in responsive design to create a container 
+    with a height that is a percentage of its width, maintaining an aspect ratio.
+
+    In this case, the padding-bottom property is set to 100%, which means the bottom padding of the "color-box" will be 100% of its width. 
+    This can be useful when you want to create a square or maintain a specific aspect ratio for a box, 
+    especially when the content inside the box may vary.
+    */
+    border: 1px solid grey;
+}
+
+.display {
+    /*
+    Megcsináljuk kétfelé osztható grid-nek, az egyikbe írhatjuk a pontokat, 
+    a másikba meg, hogy melyik színt kell kitalálni (rgb számok alapján)
+    */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    /*még nem látható, mert nincsen height vagy min-height-ja*/
+    height: 60px;
+    line-height: 60px;
+    /*teljesen hozzá fog érni az alatta lévő dolgokhoz, ezért ->*/
+    margin-bottom: 15px;
+}
+
+.display-box {
+    border: 1px solid grey;
+    /*azért, hogy ne legyen duplafalú*/
+    margin-right: -1px;
+    text-align: center;
+}
